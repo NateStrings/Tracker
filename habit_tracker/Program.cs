@@ -5,7 +5,7 @@ namespace habit_tracker
 {
     class Program
     {
-        public static Action<string> cw = Console.WriteLine;
+        public static Action<string> cw = Console.WriteLine; // Good Stuff! I'll start using this myself
         //public static Action<string> cr = Console.ReadLine;
         static void Main(string[] args)
         {
@@ -18,6 +18,8 @@ namespace habit_tracker
             
             GetUserInput();
         }
+        
+        // Inconsistent method name
         static void sqlConnector(string SQLText)
         {
             using (var conn = new SqliteConnection(@"Data Source=habit-tracking.db")) 
@@ -34,6 +36,7 @@ namespace habit_tracker
         static void GetUserInput()
         {
             Console.Clear();
+            // Separate These 
             bool closeApp = false;
             while (closeApp == false)
             {
@@ -126,8 +129,8 @@ namespace habit_tracker
         }
         internal static string GetDateInput()
         {
-            string date = DateTime.Now.ToString("MM-dd-yy");
-            return date;
+            // returning directly without declaring a variable
+            return DateTime.Now.ToString("MM-dd-yy");
         }
         internal static int GetNumberInput(string message)
         {
